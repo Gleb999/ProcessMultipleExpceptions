@@ -14,32 +14,27 @@ namespace ProcessMultipleExpceptions
             Car myCar = new Car("Rusty", 90);
             try
             {
-                myCar.Accelerate(190);
-            }
-            catch(CarIsDeadException e)
-            {
-                throw;
-            }
-            catch
-            {
-                Console.WriteLine("Something bad happened...");
             }
 
-            /*catch (CarIsDeadException e)
+            catch (CarIsDeadException e)
             {
-                Console.WriteLine(e.Message);
+
             }
 
             catch (ArgumentOutOfRangeException e)
             {
-                Console.WriteLine(e.Message);
-            }
 
+            }
 
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-            }*/
+
+            }
+
+            finally
+            {
+                myCar.CrankTunes(false);
+            }
 
             Console.ReadLine();
         }
