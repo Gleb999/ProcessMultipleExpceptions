@@ -14,9 +14,12 @@ namespace ProcessMultipleExpceptions
             Car myCar = new Car("Rusty", 90);
             try
             {
-                myCar.Accelerate(90);
+                myCar.Accelerate(190);
             }
-
+            catch(CarIsDeadException e)
+            {
+                throw;
+            }
             catch
             {
                 Console.WriteLine("Something bad happened...");
